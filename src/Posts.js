@@ -7,7 +7,7 @@ function Posts() {
 
   // JSON 서버에서 데이터 가져오기
   useEffect(() => {
-    fetch('http://localhost:5000/posts') // JSON 서버 주소
+    fetch('https://673589be5995834c8a9319d5.mockapi.io/api/db/posts') // JSON 서버 주소
       .then(response => response.json())
       .then(data => setPosts(data))
       .catch(error => console.error('Error fetching data:', error));
@@ -20,7 +20,7 @@ function Posts() {
     //추가할 데이터 내용
     const newPost = { title: newTitle, content: newContent };
 
-    fetch('http://localhost:5000/posts', {
+    fetch('https://673589be5995834c8a9319d5.mockapi.io/api/db/posts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ function Posts() {
 
   // 데이터 삭제 함수
   const deletePost = (id) => {
-    fetch(`http://localhost:5000/posts/${id}`, {
+    fetch(`https://673589be5995834c8a9319d5.mockapi.io/api/db/posts/${id}`, {
       method: 'DELETE',
     })
       .then(() => {
